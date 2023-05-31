@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D RB2D;
-    public float dashForce;
-    public float speed = 3f;
+    public float dashForce, speed;    
     public KeyCode dashKey;
     float aXH, aXV;
     
@@ -37,9 +36,8 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RB2D.MovePosition(new Vector3(RB2D.position.x, RB2D.position.y, 0) +
-            (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.fixedDeltaTime);
+        RB2D.MovePosition((Vector3)RB2D.position + (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.fixedDeltaTime);
+        //RB2D.AddForce(direction * speed, ForceMode2D.Force);
 
-        
     }
 }
