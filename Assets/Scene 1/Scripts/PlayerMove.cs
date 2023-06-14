@@ -8,12 +8,21 @@ public class PlayerMove : MonoBehaviour
     public float dashForce, speed;    
     public KeyCode dashKey;
     float aXH, aXV;
-    
+
     Vector2 direction;
+
+    public float maxPlayerLife = 100;
+    public float playerLife;
+
+    private bool isDamaging;
+
+    public float damageCooldown = 0.5f;
+    public float timerCooldown = 0;
 
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();
+        playerLife = maxPlayerLife;
     }
     private void Update()
     {
@@ -31,7 +40,25 @@ public class PlayerMove : MonoBehaviour
             RB2D.AddForce(direction * dashForce, ForceMode2D.Impulse);
         }
 
-        Debug.Log(direction.magnitude);
+        //Si timerCooldown es menor a damageCooldown, se suma un timerCooldown
+        if (timerCooldown < damageCooldown) timerCooldown += Time.deltaTime;
+
+        if (isDamaging && timerCooldown >= damageCooldown)
+        {
+            playerLife -= 10;
+            timerCooldown = 0;
+
+            if(playerLife == 0)
+            {
+                Debug.Log("Moriste");
+
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Todavía seguís vivo. Te queda: " + playerLife);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -39,5 +66,25 @@ public class PlayerMove : MonoBehaviour
         RB2D.MovePosition((Vector3)RB2D.position + (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.fixedDeltaTime);
         //RB2D.AddForce(direction * speed, ForceMode2D.Force);
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+      
+        //Si choco con enemie me hace daño
+        if(collision.gameObject.tag == "CustomTag" || collision.gameObject.layer == 6) isDamaging = true;
+
+        //Si choco con objeto destruíble se destruye
+        if (collision.gameObject.layer == 7) Destroy(collision.gameObject);
+
+        //Pasame el nombre del objeto donde está el script + coment + nombre del objeto donde estoy collisionando
+        Debug.Log(this.gameObject.name + "entré en colisión" + collision.gameObject.name);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isDamaging = false;
+
+        Debug.Log(this.gameObject.name + "salí de colisión" + collision.gameObject.name);
     }
 }
