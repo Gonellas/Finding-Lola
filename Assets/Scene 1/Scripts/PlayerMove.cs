@@ -11,18 +11,18 @@ public class PlayerMove : MonoBehaviour
 
     Vector2 direction;
 
-    public float maxPlayerLife = 100;
-    public float playerLife;
+    //public float maxPlayerLife = 100;
+    //public float playerLife;
 
-    private bool isDamaging;
+    //private bool isDamaging;
 
-    public float damageCooldown = 0.5f;
-    public float timerCooldown = 0;
+    //public float damageCooldown = 0.5f;
+    //public float timerCooldown = 0;
 
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();
-        playerLife = maxPlayerLife;
+        //playerLife = maxPlayerLife;
     }
     private void Update()
     {
@@ -40,25 +40,25 @@ public class PlayerMove : MonoBehaviour
             RB2D.AddForce(direction * dashForce, ForceMode2D.Impulse);
         }
 
-        //Si timerCooldown es menor a damageCooldown, se suma un timerCooldown
-        if (timerCooldown < damageCooldown) timerCooldown += Time.deltaTime;
+        ////Si timerCooldown es menor a damageCooldown, se suma un timerCooldown
+        //if (timerCooldown < damageCooldown) timerCooldown += Time.deltaTime;
 
-        if (isDamaging && timerCooldown >= damageCooldown)
-        {
-            playerLife -= 10;
-            timerCooldown = 0;
+        //if (isDamaging && timerCooldown >= damageCooldown)
+        //{
+        //    playerLife -= 10;
+        //    timerCooldown = 0;
 
-            if(playerLife == 0)
-            {
-                Debug.Log("Moriste");
+        //    if(playerLife == 0)
+        //    {
+        //        Debug.Log("Moriste");
 
-                Destroy(gameObject);
-            }
-            else
-            {
-                Debug.Log("Todavía seguís vivo. Te queda: " + playerLife);
-            }
-        }
+        //        Destroy(gameObject);
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Todavía seguís vivo. Te queda: " + playerLife);
+        //    }
+        //}
     }
 
     private void FixedUpdate()
@@ -68,23 +68,23 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
       
-        //Si choco con enemie me hace daño
-        if(collision.gameObject.tag == "CustomTag" || collision.gameObject.layer == 6) isDamaging = true;
+    //    //Si choco con enemie me hace daño
+    //    if(collision.gameObject.tag == "CustomTag" || collision.gameObject.layer == 6) isDamaging = true;
 
-        //Si choco con objeto destruíble se destruye
-        if (collision.gameObject.layer == 7) Destroy(collision.gameObject);
+    //    //Si choco con objeto destruíble se destruye
+    //    if (collision.gameObject.layer == 7) Destroy(collision.gameObject);
 
-        //Pasame el nombre del objeto donde está el script + coment + nombre del objeto donde estoy collisionando
-        Debug.Log(this.gameObject.name + "entré en colisión" + collision.gameObject.name);
-    }
+    //    //Pasame el nombre del objeto donde está el script + coment + nombre del objeto donde estoy collisionando
+    //    Debug.Log(this.gameObject.name + "entré en colisión" + collision.gameObject.name);
+    //}
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isDamaging = false;
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    isDamaging = false;
 
-        Debug.Log(this.gameObject.name + "salí de colisión" + collision.gameObject.name);
-    }
+    //    Debug.Log(this.gameObject.name + "salí de colisión" + collision.gameObject.name);
+    //}
 }

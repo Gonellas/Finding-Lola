@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5823964511212308720}
   - component: {fileID: 5823964511212308721}
   - component: {fileID: 5823964511212308734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,10 +103,6 @@ MonoBehaviour:
   dashForce: 25
   speed: 8
   dashKey: 304
-  maxPlayerLife: 100
-  playerLife: 100
-  damageCooldown: 1.5
-  timerCooldown: 0
 --- !u!50 &5823964511212308721
 Rigidbody2D:
   serializedVersion: 4
