@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
 
         //Dash
         if (Input.GetKeyDown(dashKey) && direction != Vector2.zero)
-        {
+        {           
             RB2D.AddForce(direction * dashForce, ForceMode2D.Impulse);
         }
 
