@@ -24,10 +24,10 @@ public class SceneManagerController : MonoBehaviour
         if (wantedActiveMenu != null) wantedActiveMenu.SetActive(true);
     }
 
-    public void ChangeScene()
+    public void ChangeScene(Object scene)
     {
-        //Cambio de escena por index
-        SceneManager.LoadScene(1);
+        //Cambio de escena
+        SceneManager.LoadScene(scene.name);
     }
     public void ExitGame()
     {
