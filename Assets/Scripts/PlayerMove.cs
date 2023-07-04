@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D RB2D;
-    public float dashForce, speed;    
+    public float dashForce, speed, playerRotateSpeed;    
     public KeyCode dashKey;
     float aXH, aXV;
 
@@ -32,8 +32,15 @@ public class PlayerMove : MonoBehaviour
         //Movement
         //transform.position += (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.deltaTime;
 
-        direction = new Vector2(aXH, aXV).normalized;           
+        //(Rotacion del auto)
+        //transform.Rotate(aXH * Vector3.back * playerRotateSpeed * Time.deltaTime);
 
+        //Eje local del objeto
+
+        //transform.position += transform.right * aXV * playerRotateSpeed * Time.deltaTime;
+
+        direction = new Vector2(aXH, aXV).normalized;
+        
         //Dash
         if (Input.GetKeyDown(dashKey) && direction != Vector2.zero)
         {           
