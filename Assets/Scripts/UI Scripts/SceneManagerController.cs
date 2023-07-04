@@ -29,6 +29,11 @@ public class SceneManagerController : MonoBehaviour
         //Cambio de escena
         SceneManager.LoadScene(scene.name);
     }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void ExitGame()
     {
         //Si estamos en el editor, cerrá el juego con este código
