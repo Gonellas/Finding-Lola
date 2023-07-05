@@ -24,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 7)
         {
             //Del objeto con el que colisioné, quiero su objeto en el mundo, su script nombre, y una vez
             //que lo obtuve traeme x función
@@ -32,7 +32,7 @@ public class EnemyBullet : MonoBehaviour
         }
 
         //El daño de la bala influye en el enemy
-        if (collision.gameObject.layer == 3)
+        if (collision.gameObject.layer == 8)
         {
             collision.gameObject.GetComponent<PlayerLife>().GetDamage(bulletDamage);
         }
