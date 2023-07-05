@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CamController : MonoBehaviour
 {
@@ -8,15 +9,17 @@ public class CamController : MonoBehaviour
 
     private void Awake()
     {
-        if(target == null)
+        if (target == null)
         {
             //target = GameObject.FindGameObjectWithTag("Player").transform;
             target = FindObjectOfType<PlayerMove>().transform;
         }
     }
 
-    private void LateUpdate()
+    private void LateUpdate() //Se ejecuta a lo último de un frame. Se usa para control de la cámara.
     {
-        //if(target != null) 
+        if (target != null) transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+
     }
 }
+

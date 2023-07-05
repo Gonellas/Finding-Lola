@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class StaticEnemy : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawner;
+    public GameObject enemyBulletPrefab;
+    public Transform enemyBulletSpawner;
 
-    public float 
+    public float shootCooldown = 0f;
+    public float cooldownTimer = 2f;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,17 @@ public class StaticEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (shootCooldown <= 0)
+        {
+            Shoot();
+        }
+
+        if (shootCooldown > 0) shootCooldown -= 1 * Time.deltaTime;        
+    }
+
+    void Shoot()
+    {
+        shootCooldown = cooldownTimer;
+        Instantiate(enemyBulletPrefab, enemyBulletSpawner.position, enemyBulletSpawner.rotation);
     }
 }

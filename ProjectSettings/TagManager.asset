@@ -15,7 +15,7 @@ TagManager:
   - DestructuibleObject
   - Player
   - Bullet
-  - 
+  - EnemyBullet
   - 
   - 
   - 
