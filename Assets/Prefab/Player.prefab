@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1412307298700972840}
   - component: {fileID: 1412307298700972835}
   - component: {fileID: 1412307298700972832}
+  - component: {fileID: 4062687308121764356}
   - component: {fileID: 1412307298700972833}
   - component: {fileID: 1412307298700972838}
   - component: {fileID: 1412307298700972839}
@@ -105,7 +106,21 @@ MonoBehaviour:
   RB2D: {fileID: 1412307298700972833}
   dashForce: 25
   speed: 8
+  playerRotateSpeed: 0
   dashKey: 304
+--- !u!114 &4062687308121764356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412307297476841866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aba758b4df3a94a93749e50c6cde46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnim: {fileID: -223386770664936479}
 --- !u!50 &1412307298700972833
 Rigidbody2D:
   serializedVersion: 4
