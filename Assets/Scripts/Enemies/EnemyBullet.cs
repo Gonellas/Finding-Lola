@@ -11,10 +11,13 @@ public class EnemyBullet : MonoBehaviour
     //Daño de la bala
     public float bulletDamage = 25f;
 
+    public Animator playerDamaged;
+
     private void Start()
     {
         //Destruye el objeto bullet en 3seg
         Destroy(gameObject, lifeTime);
+        playerDamaged = GameObject.FindWithTag("Player").GetComponent<Animator>();
     }
     private void Update()
     {
@@ -34,6 +37,7 @@ public class EnemyBullet : MonoBehaviour
         //El daño de la bala influye en el enemy
         if (collision.gameObject.layer == 8)
         {
+            playerDamaged.SetTrigger("isDamaged");
             collision.gameObject.GetComponent<PlayerLife>().GetDamage(bulletDamage);
         }
 

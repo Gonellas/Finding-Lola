@@ -20,6 +20,7 @@ public class PlayerAnims : MonoBehaviour
             playerAnim.SetTrigger("isShooting");
         }
 
+        //Running Right
         if (Input.GetKeyDown(KeyCode.D))
         {
             playerAnim.SetBool("isRunning", true);
@@ -28,6 +29,28 @@ public class PlayerAnims : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D))
         {
             playerAnim.SetBool("isRunning", false);
+        }
+
+        //Running Up
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            playerAnim.SetBool("isRunningUp", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            playerAnim.SetBool("isRunningUp", false);
+        }
+
+        //Running Down
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            playerAnim.SetBool("isRunningDown", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            playerAnim.SetBool("isRunningDown", false);
         }
     }
 }
