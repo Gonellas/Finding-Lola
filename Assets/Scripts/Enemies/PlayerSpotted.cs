@@ -37,7 +37,7 @@ public class PlayerSpotted : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            if (followEnemy !=null) followEnemy.PLayerHasBeenSeen();
+            playerSpotted();
             mySprite.color = new Color(0.9433962f, 0.004449993f, 0.09141554f, 0.3921569f);
             //mySprite.color = playerSeen;
         }
