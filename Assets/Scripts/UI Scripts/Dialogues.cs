@@ -4,11 +4,11 @@ using UnityEngine;
 public class Dialogues : MonoBehaviour
 {
     public GameObject mark;
-    private bool isPlayerInRange;
+    public GameObject interact;
     public GameObject[] dialoguesObjects;
-    public bool didDialogueStart;
     public int dialogueIndex;
-
+    public bool isPlayerInRange;    
+    public bool didDialogueStart;   
 
     private void Update()
     {
@@ -17,12 +17,10 @@ public class Dialogues : MonoBehaviour
             if (!didDialogueStart)
             {
                 StartDialogue();
-
             }
             else
             {
                 NextDialogue();
-
             }
         }
     }
@@ -56,13 +54,13 @@ public class Dialogues : MonoBehaviour
         didDialogueStart = false;
         Time.timeScale = 1;
         mark.SetActive(false);
+        Destroy(mark);
+        Destroy(interact);
     }
 
 
     private void ShowDialogue()
     {
-  
-
         foreach (GameObject dialogueObject in dialoguesObjects)
         {
             dialogueObject.SetActive(false);
