@@ -17,7 +17,10 @@ public class StaticEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (target ==null)
+        {
+            target = FindObjectOfType<PlayerMove>().transform;
+        }
     }
 
     // Update is called once per frame
@@ -30,17 +33,31 @@ public class StaticEnemy : MonoBehaviour
         if(distance < minDistanceToShoot) playerSpotted= true;
         else playerSpotted= false;  
 
-        if (shootCooldown <= 0)
+        if (shootCooldown <= 0 && playerSpotted == true)
         {
             Shoot();
         }
 
+        if (playerSpotted) followPlayerRotationSpottedPoint();
+
         if (shootCooldown > 0) shootCooldown -= 1 * Time.deltaTime;        
     }
-
-    void Shoot()
+        void Shoot()
     {
         shootCooldown = cooldownTimer;
         Instantiate(enemyBulletPrefab, enemyBulletSpawner.position, enemyBulletSpawner.rotation);
+    }
+
+    void followPlayerRotationSpottedPoint() //El enemigo rota al descubrir al personaje
+    {
+        /*Vector3 vectorToTarget = target.position - transform.position;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
+
+        Vector3 direction = target.position - transform.position;   
+        float angle = Vector2.SignedAngle(Vector2.right, direction); //(Vector2.right o left según como está la imágen)
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        
     }
 }
