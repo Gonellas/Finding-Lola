@@ -1031,6 +1031,7 @@ GameObject:
   - component: {fileID: 714187425}
   - component: {fileID: 714187429}
   - component: {fileID: 714187428}
+  - component: {fileID: 714187430}
   m_Layer: 3
   m_Name: DinamicEnemyControler
   m_TagString: Untagged
@@ -1130,6 +1131,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &714187430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714187424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab00478dfbe49540a2da2b15cf2efce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followEnemy: {fileID: 0}
+  playerNotSeen: {r: 0.2901961, g: 0.8392157, b: 0.69411767, a: 0.39215687}
+  playerSeen: {r: 0.94509804, g: 0.003921569, b: 0.09019608, a: 0.39215687}
 --- !u!1 &787783805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followEnemy: {fileID: 714187425}
+  playerNotSeen: {r: 0, g: 0, b: 0, a: 0}
+  playerSeen: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &909239339
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,8 +22,8 @@ public class FollowEnemy : MonoBehaviour
     {
         if (target == null) return;
 
-       if (playerSpotted) followPlayerRotationSpottedPoint();
-    }
+        if (playerSpotted) followPlayerRotationSpottedPoint();
+     }
 
     void followPlayerRotationSpottedPoint() //El enemigo rota al descubrir al personaje
     {
