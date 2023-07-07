@@ -12,12 +12,14 @@ public class EnemyBullet : MonoBehaviour
     public float bulletDamage = 25f;
     private Transform target;
     public Animator playerDamaged;
+    public GameManager gameManager;
 
     private void Start()
     {
         //Destruye el objeto bullet en 3seg
         Destroy(gameObject, lifeTime);
         playerDamaged = GameObject.FindWithTag("Player").GetComponent<Animator>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void Update()
     {
@@ -25,29 +27,15 @@ public class EnemyBullet : MonoBehaviour
         transform.position += speed * transform.right * Time.deltaTime;
     }
 
-    public void SetTarget(Transform target)
-    {
-        this.target = target;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 7)
-        {
-            //Del objeto con el que colisioné, quiero su objeto en el mundo, su script nombre, y una vez
-            //que lo obtuve traeme x función
-            collision.gameObject.GetComponent<DestructibleObject>().GetDamage();
-        }
-
-        //El daño de la bala influye en el enemy
         if (collision.gameObject.layer == 8)
         {
             playerDamaged.SetTrigger("isDamaged");
             collision.gameObject.GetComponent<PlayerLife>().GetDamage(bulletDamage);
         }
 
-        //Si entra en colisión se destruye
+        //gameManager.DefeatedMenu().SetActive(true);
         Destroy(gameObject);
     }
-
 }

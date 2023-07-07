@@ -249,7 +249,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isShottingUp
+    m_ConditionEvent: isShootingUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8724484052530607405}
@@ -274,7 +274,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isShottingUp
+    m_ConditionEvent: isShootingUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8724484052530607405}
@@ -299,7 +299,7 @@ AnimatorController:
   m_Name: Enemy1_anim
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isShottingUp
+  - m_Name: isShootingUp
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -324,12 +324,6 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: isShootingRight
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isShootingDown 0
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -444,7 +438,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isShottingUp
+    m_ConditionEvent: isShootingUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5718269153367070084}
@@ -453,7 +447,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.0006775262
+  m_TransitionOffset: 0
   m_ExitTime: 1
   m_HasExitTime: 0
   m_HasFixedDuration: 1
