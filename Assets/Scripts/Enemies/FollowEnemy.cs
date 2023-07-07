@@ -6,9 +6,10 @@ public class FollowEnemy : MonoBehaviour
 {
     public Transform target; //busca al player
     public int speed;
+    //public GameObject enemyAnimator;
     bool playerSpotted;
     public Animator enemyAnim;
-
+    public bool isMoving;
 
     // Start is called before the first frame update
     void Start()
@@ -34,47 +35,59 @@ public class FollowEnemy : MonoBehaviour
         //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         //direction = direction.normalized;
-        //transform.position += direction * speed * Time.deltaTime; 
+        //transform.position += direction * speed * Time.deltaTime;
 
         Vector3 direction = target.position - transform.position;
         direction.Normalize();
-        transform.position += direction * speed * Time.deltaTime; 
 
-
-        float absoluteX = Mathf.Abs(direction.x);
-        float absoluteY = Mathf.Abs(direction.y);
-
-        enemyAnim.SetBool("isWalkingUp", false);
-        enemyAnim.SetBool("isWalkingDown", false);
-        enemyAnim.SetBool("isWalkinggLeft", false);
-        enemyAnim.SetBool("isWalkingRight", false);
-
-        if (absoluteX > absoluteY)
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (direction.x > 0)
             {
-                enemyAnim.SetBool("isWalkingRight", true);
+                // Mover hacia la derecha
+                transform.position += Vector3.right * speed * Time.deltaTime;
+                SetMovementAnimations(true, false, false, false);
             }
             else
             {
-                enemyAnim.SetBool("isWalkingLeft", true);
+                // Mover hacia la izquierda
+                transform.position += Vector3.left * speed * Time.deltaTime;
+                SetMovementAnimations(false, true, false, false);
             }
         }
         else
         {
             if (direction.y > 0)
             {
-                enemyAnim.SetBool("isWalkingUp", true);
+                // Mover hacia arriba
+                transform.position += Vector3.up * speed * Time.deltaTime;
+                SetMovementAnimations(false, false, true, false);
             }
             else
             {
-                enemyAnim.SetBool("isWalkingDown", true);
+                // Mover hacia abajo
+                transform.position += Vector3.down * speed * Time.deltaTime;
+                SetMovementAnimations(false, false, false, true);
             }
         }
+
+        // Si el enemigo no está en movimiento, restablecer las animaciones
+        if (direction == Vector3.zero)
+        {
+            SetMovementAnimations(false, false, false, false);
+        }
+    
     }
 
+    void SetMovementAnimations(bool movingRight, bool movingLeft, bool movingUp, bool movingDown)
+    {
+        enemyAnim.SetBool("isWalkingRight", movingRight);
+        enemyAnim.SetBool("isWalkingLeft", movingLeft);
+        enemyAnim.SetBool("isWalkingUp", movingUp);
+        enemyAnim.SetBool("isWalkingDown", movingDown);
+    }
 
-    public void PLayerHasBeenSeen()
+        public void PlayerHasBeenSeen()
     {
         if (!playerSpotted) playerSpotted = true;
         else playerSpotted= false;

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerSpotted : MonoBehaviour
 {
+
     public FollowEnemy followEnemy;
     public PatrolAndFollowEnemy patrolAndFollowEnemy;
     SpriteRenderer mySprite;
@@ -39,7 +40,7 @@ public class PlayerSpotted : MonoBehaviour
     }
     void playerSpotted ()
     {
-        if (followEnemy != null) followEnemy.PLayerHasBeenSeen();
+        if (followEnemy != null) followEnemy.PlayerHasBeenSeen();
         if (patrolAndFollowEnemy != null) patrolAndFollowEnemy.PlayerHasBeenSeen();
     }
 

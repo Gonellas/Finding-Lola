@@ -6,10 +6,13 @@ public class PlayerLife : MonoBehaviour
 {
     public float playerLife;
     public float playerMaxLife = 100;
+    public LifeCanvas lifeCanvas;
 
     private void Start()
     {
         playerLife = playerMaxLife;
+        lifeCanvas = FindObjectOfType<LifeCanvas>();
+        lifeCanvas.UpdateLife(playerLife, playerMaxLife);
     }
 
     public void GetDamage(float damage)
@@ -22,12 +25,14 @@ public class PlayerLife : MonoBehaviour
         }
         else
         {
+            lifeCanvas.UpdateLife(playerLife, playerMaxLife);
             Debug.Log(gameObject.name + " recibió daño, le queda " + playerLife + " de vida");
         }
     }
 
     private void DestroyObject()
     {
+        lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         Debug.Log(gameObject.name + " se murió");
         Destroy(gameObject);
     }
@@ -39,6 +44,7 @@ public class PlayerLife : MonoBehaviour
         {
             playerLife = playerMaxLife;
         }
+        lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         Debug.Log(gameObject.name + " recibió vida, le queda " + playerLife + " de vida");
     }
 }
