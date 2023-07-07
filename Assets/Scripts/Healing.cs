@@ -5,23 +5,29 @@ using UnityEngine;
 public class Healing : MonoBehaviour
 {
     public float healingAmount = 50f;
+    private bool isPlayerInRange = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.layer == 8)
-        //{
-        //    PlayerLife _playerLife = collision.gameObject.GetComponent<PlayerLife>();
-
-        //    if(_playerLife.playerLife < _playerLife.playerMaxLife) 
-        //    {
-        //        _playerLife.GetHeal(healingAmount);
-        //        Destroy(gameObject);
-        //    }
-        //}
-
-        if (collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.E))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLife _playerLife = collision.gameObject.GetComponent<PlayerLife>();
+            isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (isPlayerInRange && Input.GetKey(KeyCode.E))
+        {
+            PlayerLife _playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
 
             if (_playerLife.playerLife < _playerLife.playerMaxLife)
             {
@@ -31,4 +37,3 @@ public class Healing : MonoBehaviour
         }
     }
 }
-
