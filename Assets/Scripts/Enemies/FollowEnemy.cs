@@ -10,6 +10,7 @@ public class FollowEnemy : MonoBehaviour
     bool playerSpotted;
     public Animator enemyAnim;
     public bool isMoving;
+    public int damage = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,15 @@ public class FollowEnemy : MonoBehaviour
         if (playerSpotted) followPlayerRotationSpottedPoint();
      }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            collision.gameObject.GetComponent<PlayerLife>().GetDamage(damage);
+        }
+
+        
+    }
     void followPlayerRotationSpottedPoint() //El enemigo rota al descubrir al personaje
     {
         //Vector3 direction = target.position - transform.position;
