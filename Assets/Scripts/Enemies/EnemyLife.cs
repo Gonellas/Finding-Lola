@@ -9,9 +9,7 @@ public class EnemyLife : MonoBehaviour
 
     private void Start()
     {
-        enemyLife = enemyMaxLife;
-
-       
+        enemyLife = enemyMaxLife;    
     }
 
     public void GetDamage(float damage)

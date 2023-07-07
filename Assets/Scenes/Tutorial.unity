@@ -218,9 +218,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.5, y: 1}
+    newSize: {x: 0.5, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -269,15 +269,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1156816864, guid: fa6aa48177f7ce240af9d0adb96d1114, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &92492871
@@ -303,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 92492865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.1361754, y: -3.8694592, z: 0.06240805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 199839595}
@@ -13391,6 +13391,7 @@ GameObject:
   - component: {fileID: 1352882964}
   - component: {fileID: 1352882966}
   - component: {fileID: 1352882967}
+  - component: {fileID: 1352882968}
   m_Layer: 0
   m_Name: StaticEnemy
   m_TagString: Untagged
@@ -13439,12 +13440,12 @@ SpriteRenderer:
   m_SortingLayerID: 1674045603
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1450185146, guid: 999e754bae1831442a07aa292f402b03, type: 3}
-  m_Color: {r: 1, g: 0.7216981, b: 0.96051866, a: 1}
+  m_Sprite: {fileID: -361516998, guid: 999e754bae1831442a07aa292f402b03, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -13484,6 +13485,7 @@ MonoBehaviour:
   cooldownTimer: 0.75
   target: {fileID: 0}
   minDistanceToShoot: 15
+  enemyAnim: {fileID: 1352882968}
 --- !u!114 &1352882967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13498,6 +13500,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLife: 0
   enemyMaxLife: 100
+--- !u!95 &1352882968
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352882963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f71ac46ff1e6744a847a7e6b82fa3f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1354881478
 GameObject:
   m_ObjectHideFlags: 0

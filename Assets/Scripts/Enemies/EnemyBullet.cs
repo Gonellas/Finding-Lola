@@ -10,7 +10,7 @@ public class EnemyBullet : MonoBehaviour
     public float lifeTime = 3f;
     //Daño de la bala
     public float bulletDamage = 25f;
-
+    private Transform target;
     public Animator playerDamaged;
 
     private void Start()
@@ -23,6 +23,11 @@ public class EnemyBullet : MonoBehaviour
     {
         //Dirección y movimiento bullet
         transform.position += speed * transform.right * Time.deltaTime;
+    }
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
