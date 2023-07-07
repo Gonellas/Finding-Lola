@@ -11,10 +11,15 @@ public class Bullet : MonoBehaviour
     //Daño de la bala
     public float bulletDamage = 25f;
 
+    public Animator enemyDamaged;
+
+
     private void Start()
     {
         //Destruye el objeto bullet en 3seg
         Destroy(gameObject, lifeTime);
+        enemyDamaged = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
+
     }
     private void Update()
     {
@@ -45,6 +50,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
         {
+            enemyDamaged.SetBool("isDamaged", true);
             collision.gameObject.GetComponent<EnemyLife>().GetDamage(bulletDamage);
         }
 

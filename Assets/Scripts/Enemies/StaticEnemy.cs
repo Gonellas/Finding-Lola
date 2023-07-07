@@ -66,19 +66,6 @@ public class StaticEnemy : MonoBehaviour
             //float angle = Vector2.SignedAngle(Vector2.right, direction); //(Vector2.right o left según como está la imágen)
             //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            //if(target != null)
-            //{
-            //    Vector3 playerPosition = target.transform.position;
-            //    Vector3 enemyPosition = transform.position;
-
-            //    enemyAnim.SetBool("isShootingUp", playerPosition.y > enemyPosition.y);
-            //    enemyAnim.SetBool("isShootingLeft", playerPosition.x < enemyPosition.x);
-            //    enemyAnim.SetBool("isShootingRight", playerPosition.x > enemyPosition.x);
-            //    enemyAnim.SetBool("isShootingDown", playerPosition.y < enemyPosition.y);
-
-            //    //enemyAnim.SetTrigger("isDamaged");
-            //}
-
         Vector3 direction = target.position - transform.position;
         direction.Normalize();
 
