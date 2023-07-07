@@ -138,5 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 3
-  bulletDamage: 25
+  bulletDamage: 10
   playerDamaged: {fileID: -223386770664936479, guid: 81509ccca700e464f836580be993bbec, type: 3}
+  gameManager: {fileID: 0}
