@@ -5,22 +5,6 @@ using UnityEngine;
 
 public class PlayerSpotted : MonoBehaviour
 {
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
-    }
-    */
-
     public FollowEnemy followEnemy;
     public PatrolAndFollowEnemy patrolAndFollowEnemy;
     SpriteRenderer mySprite;
@@ -56,7 +40,7 @@ public class PlayerSpotted : MonoBehaviour
     void playerSpotted ()
     {
         if (followEnemy != null) followEnemy.PLayerHasBeenSeen();
-        if (patrolAndFollowEnemy != null) patrolAndFollowEnemy.PLayerHasBeenSeen();
+        if (patrolAndFollowEnemy != null) patrolAndFollowEnemy.PlayerHasBeenSeen();
     }
 
 }
