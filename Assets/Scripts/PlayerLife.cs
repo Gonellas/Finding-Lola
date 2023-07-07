@@ -7,12 +7,14 @@ public class PlayerLife : MonoBehaviour
     public float playerLife;
     public float playerMaxLife = 100;
     public LifeCanvas lifeCanvas;
+    GameManager gameManager;
 
     private void Start()
     {
         playerLife = playerMaxLife;
         lifeCanvas = FindObjectOfType<LifeCanvas>();
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void GetDamage(float damage)
@@ -34,6 +36,7 @@ public class PlayerLife : MonoBehaviour
     {
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         Debug.Log(gameObject.name + " se murió");
+        gameManager.DefeatedMenu();
         Destroy(gameObject);
     }
 

@@ -39,10 +39,8 @@ public class GameManager : MonoBehaviour
 
     public void DefeatedMenu()
     {
-        if (!isPaused)
-        {
-            TogglePauseMenu();
-        }
         defeatedMenu.SetActive(true);
+        Time.timeScale = 0;
+        isPaused = true;
     }
 }
