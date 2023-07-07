@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab00478dfbe49540a2da2b15cf2efce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followEnemy: {fileID: 1452592397168670850}
+  followEnemy: {fileID: 0}
   patrolAndFollowEnemy: {fileID: 0}
   playerNotSeen: {r: 0, g: 0, b: 0, a: 0}
   playerSeen: {r: 0, g: 0, b: 0, a: 0}
