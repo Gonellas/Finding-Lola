@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
 
     public Animator enemyDamaged;
 
+    private Vector3 direction;
 
     private void Start()
     {
@@ -25,6 +26,12 @@ public class Bullet : MonoBehaviour
     {
         //Dirección y movimiento bullet
         transform.position += speed * transform.right * Time.deltaTime;
+    }
+
+    public void SetDirection(Vector3 dir)
+    {
+        direction = dir;
+        Debug.Log("Direction set to: " + direction);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
