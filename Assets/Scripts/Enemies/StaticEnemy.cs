@@ -76,7 +76,7 @@ public class StaticEnemy : MonoBehaviour
         enemyAnim.SetBool("isShootingDown", false);
         enemyAnim.SetBool("isShootingLeft", false);
         enemyAnim.SetBool("isShootingRight", false);
-
+      
         if (absoluteX > absoluteY)
         {
             if (direction.x > 0)

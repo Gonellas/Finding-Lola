@@ -77,7 +77,7 @@ public class PatrolAndFollowEnemy : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    public void PLayerHasBeenSeen()
+    public void PlayerHasBeenSeen()
     {
         if (!playerSpotted) playerSpotted = true;
         else playerSpotted = false;
