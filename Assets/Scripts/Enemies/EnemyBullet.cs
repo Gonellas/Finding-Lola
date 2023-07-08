@@ -32,6 +32,7 @@ public class EnemyBullet : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             playerDamaged.SetTrigger("isDamaged");
+            
             collision.gameObject.GetComponent<PlayerLife>().GetDamage(bulletDamage);
         }
 

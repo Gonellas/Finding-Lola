@@ -9,6 +9,7 @@ public class PlayerLife : MonoBehaviour
     public LifeCanvas lifeCanvas;
     GameManager gameManager;
     public AudioSource healSound;
+    public AudioSource damageSound;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerLife : MonoBehaviour
     public void GetDamage(float damage)
     {
         playerLife -= damage;
+        damageSound.Play();
 
         if (playerLife <= 0)
         {
