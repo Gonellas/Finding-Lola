@@ -8982,7 +8982,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0e2409de126a29144818b20eef57460f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20012,6 +20012,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1452592397103856222, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -22088,15 +22108,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1674045603
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1452592396526344666, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1452592397103856222, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
       propertyPath: m_Layer
@@ -24457,7 +24489,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -807354855
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.010638297, y: 0.010638297, z: 0}
@@ -68095,7 +68127,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1674045603
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.94509804, g: 0.003921569, b: 0.09019608, a: 0.39215687}
@@ -76351,6 +76383,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592396526344665, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452592397103856220, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1452592397103856222, guid: 4840bf90deea86b48810cfad911248f5, type: 3}
       propertyPath: m_Layer
       value: 3
