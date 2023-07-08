@@ -8,7 +8,7 @@ public class PlayerLife : MonoBehaviour
     public float playerMaxLife = 100;
     public LifeCanvas lifeCanvas;
     GameManager gameManager;
-    public AudioSource audioSource;
+    public AudioSource healSound;
 
     private void Start()
     {
@@ -25,7 +25,6 @@ public class PlayerLife : MonoBehaviour
         if (playerLife <= 0)
         {
             DestroyObject();
-            audioSource.Play();
         }
         else
         {
@@ -46,6 +45,7 @@ public class PlayerLife : MonoBehaviour
     public void GetHeal(float healingNumber)
     {
         playerLife += healingNumber;
+        healSound.Play();
         if (playerLife > playerMaxLife)
         {
             playerLife = playerMaxLife;

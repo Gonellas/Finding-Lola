@@ -7,8 +7,7 @@ using UnityEngine;
 public class PlayerAnims : MonoBehaviour
 {
     public Animator playerAnim;
-    private bool isRunning;
-    private bool isRunningUp;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -28,44 +27,60 @@ public class PlayerAnims : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             playerAnim.SetBool("isRunning", true);
+            audioSource.Play();
         }
 
         if (Input.GetKeyUp(KeyCode.D))
         {
             playerAnim.SetBool("isRunning", false);
+            audioSource.Stop();
+
+
         }
 
         //Running Up
         if (Input.GetKeyDown(KeyCode.W))
         {
             playerAnim.SetBool("isRunningUp", true);
+            audioSource.Play();
+
         }
 
         if (Input.GetKeyUp(KeyCode.W))
         {
             playerAnim.SetBool("isRunningUp", false);
+            audioSource.Stop();
+
         }
 
         //Running Down
         if (Input.GetKeyDown(KeyCode.S))
         {
             playerAnim.SetBool("isRunningDown", true);
+            audioSource.Play();
+
         }
 
         if (Input.GetKeyUp(KeyCode.S))
         {
             playerAnim.SetBool("isRunningDown", false);
+            audioSource.Stop();
+
         }
-        
+
         //Running Left
         if (Input.GetKeyDown(KeyCode.A))
         {
             playerAnim.SetBool("isRunningLeft", true);
+            audioSource.Play();
+
         }
 
         if (Input.GetKeyUp(KeyCode.A))
         {
             playerAnim.SetBool("isRunningLeft", false);
+            audioSource.Stop();
+
         }
 
 
