@@ -7,6 +7,9 @@ using UnityEngine;
 public class PlayerAnims : MonoBehaviour
 {
     public Animator playerAnim;
+    private bool isRunning;
+    private bool isRunningUp;
+
     void Start()
     {
         playerAnim = GetComponent<Animator>();
@@ -15,6 +18,7 @@ public class PlayerAnims : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(KeyCode.Mouse0))
         {
             playerAnim.SetTrigger("isShooting");
@@ -52,5 +56,18 @@ public class PlayerAnims : MonoBehaviour
         {
             playerAnim.SetBool("isRunningDown", false);
         }
+        
+        //Running Left
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            playerAnim.SetBool("isRunningLeft", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            playerAnim.SetBool("isRunningLeft", false);
+        }
+
+
     }
 }
