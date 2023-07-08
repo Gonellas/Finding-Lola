@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     public float playerMaxLife = 100;
     public LifeCanvas lifeCanvas;
     GameManager gameManager;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerLife : MonoBehaviour
         if (playerLife <= 0)
         {
             DestroyObject();
+            audioSource.Play();
         }
         else
         {
@@ -36,6 +38,7 @@ public class PlayerLife : MonoBehaviour
     {
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         Debug.Log(gameObject.name + " se murió");
+        
         gameManager.DefeatedMenu();
         Destroy(gameObject);
     }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
 
     private bool isPaused = false;
+    public AudioSource audioSource;
 
     private void Update()
     {
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     public void DefeatedMenu()
     {
         defeatedMenu.SetActive(true);
+        audioSource.Play();
         Time.timeScale = 0;
         isPaused = true;
     }

@@ -15,6 +15,7 @@ public class StaticEnemy : MonoBehaviour
     bool playerSpotted;//cuando el personaje sea descubierto, el enemigo dispara
 
     public Animator enemyAnim;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class StaticEnemy : MonoBehaviour
     {
         shootCooldown = cooldownTimer;
         GameObject bullet = Instantiate(enemyBulletPrefab, enemyBulletSpawner.position, Quaternion.identity);
+        audioSource.Play();
 
         Vector3 direction = target.position - transform.position;
         float angle = Vector2.SignedAngle(Vector2.right, direction);
