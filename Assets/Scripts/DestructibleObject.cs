@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DestructibleObject : MonoBehaviour
 {
-    //Contador de golpes
     public int hitsBeforeDestroy = 1;
 
     public void GetDamage()

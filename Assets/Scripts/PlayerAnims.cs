@@ -14,7 +14,6 @@ public class PlayerAnims : MonoBehaviour
         playerAnim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -34,8 +33,6 @@ public class PlayerAnims : MonoBehaviour
         {
             playerAnim.SetBool("isRunning", false);
             audioSource.Stop();
-
-
         }
 
         //Running Up
@@ -43,7 +40,6 @@ public class PlayerAnims : MonoBehaviour
         {
             playerAnim.SetBool("isRunningUp", true);
             audioSource.Play();
-
         }
 
         if (Input.GetKeyUp(KeyCode.W))
@@ -58,14 +54,12 @@ public class PlayerAnims : MonoBehaviour
         {
             playerAnim.SetBool("isRunningDown", true);
             audioSource.Play();
-
         }
 
         if (Input.GetKeyUp(KeyCode.S))
         {
             playerAnim.SetBool("isRunningDown", false);
             audioSource.Stop();
-
         }
 
         //Running Left
@@ -73,16 +67,12 @@ public class PlayerAnims : MonoBehaviour
         {
             playerAnim.SetBool("isRunningLeft", true);
             audioSource.Play();
-
         }
 
         if (Input.GetKeyUp(KeyCode.A))
         {
             playerAnim.SetBool("isRunningLeft", false);
             audioSource.Stop();
-
         }
-
-
     }
 }

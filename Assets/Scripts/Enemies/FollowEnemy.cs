@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class FollowEnemy : MonoBehaviour
 {
-    public Transform target; //busca al player
+    public Transform target;
     public int speed;
-    //public GameObject enemyAnimator;
     bool playerSpotted;
     public Animator enemyAnim;
     public bool isMoving;
     public int damage = 15;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (target == null)
@@ -21,7 +19,6 @@ public class FollowEnemy : MonoBehaviour
         }
     }
     
-    // Update is called once per frame
     void Update()
     {
         if (target == null) return;
@@ -35,17 +32,9 @@ public class FollowEnemy : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerLife>().GetDamage(damage);
         }
-
-        
     }
-    void followPlayerRotationSpottedPoint() //El enemigo rota al descubrir al personaje
+    void followPlayerRotationSpottedPoint() 
     {
-        //Vector3 direction = target.position - transform.position;
-        //float angle = Vector2.SignedAngle(Vector2.right, direction); //(Vector2.right o left según como está la imágen)
-        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        //direction = direction.normalized;
-        //transform.position += direction * speed * Time.deltaTime;
 
         Vector3 direction = target.position - transform.position;
         direction.Normalize();
@@ -81,7 +70,6 @@ public class FollowEnemy : MonoBehaviour
             }
         }
 
-        // Si el enemigo no está en movimiento, restablecer las animaciones
         if (direction == Vector3.zero)
         {
             SetMovementAnimations(false, false, false, false);

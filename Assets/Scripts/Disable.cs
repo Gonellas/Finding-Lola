@@ -11,7 +11,6 @@ public class Disable : MonoBehaviour
     private int currentIndex = 0;
     public GameObject messagesTrigger;
     private bool isInteracting = false;
-
     private void Start()
     {
         staticEnemy = enemy.GetComponent<StaticEnemy>();

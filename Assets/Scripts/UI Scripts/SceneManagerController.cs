@@ -10,23 +10,19 @@ public class SceneManagerController : MonoBehaviour
 
     private void Start()
     {
-        //Si el menu activado es mayor a 0 (elemento 1 en la lista)
         if(allMenues.Length > 0)
-        {
-            //Recorre la lista y desactiva los menues activados
+        {         
             foreach (GameObject menu in allMenues)
             {
                 menu.SetActive(false);
             }
         }
 
-        //Si el menu principal no está activado, activalo
         if (wantedActiveMenu != null) wantedActiveMenu.SetActive(true);
     }
 
     public void ChangeScene(Object scene)
     {
-        //Cambio de escena
         SceneManager.LoadScene(scene.name);
     }
 
@@ -36,7 +32,6 @@ public class SceneManagerController : MonoBehaviour
     }
     public void ExitGame()
     {
-        //Si estamos en el editor, cerrá el juego con este código
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
