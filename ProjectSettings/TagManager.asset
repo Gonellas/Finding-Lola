@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AlexDialogue
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,8 @@ public class PlayerShoot : MonoBehaviour
     public float shootCooldown = 0;
     public float cooldownTimer = 0.5f;
 
+    public AudioSource bulletAudio;
+
     private void Update()
     {
         if(shootCooldown <= 0 && Input.GetMouseButton(0))
@@ -39,6 +41,7 @@ public class PlayerShoot : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bulletSpawner.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+        bulletAudio.Play();
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
 
         bullet.GetComponent<Bullet>().SetDirection(direction);
