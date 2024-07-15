@@ -101,6 +101,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -11352,9 +11388,9 @@ TextureImporter:
     nameFileIdTable:
       Alex_218: 1871239081
       Alex_2: -1925036887
-      Alex_424: 782510153
       Alex_472: -472734212
       Alex_177: 1482696244
+      Alex_424: 782510153
       Alex_232: 1839777325
       Alex_407: -1539995078
       Alex_422: -830717882
@@ -11389,19 +11425,19 @@ TextureImporter:
       Alex_504: 853696628
       Alex_107: 862515362
       Alex_158: 18599919
-      Alex_16: -915764520
-      Alex_173: -205784973
       Alex_176: -1687442821
-      Alex_494: 1606925362
+      Alex_16: -915764520
       Alex_233: -1001279196
-      Alex_211: -574357149
+      Alex_173: -205784973
+      Alex_494: 1606925362
       Alex_353: 2071641892
+      Alex_211: -574357149
+      Alex_521: 1396305935
       Alex_130: 28979549
       Alex_124: -2065243506
       Alex_161: -989054881
       Alex_299: 1964037284
       Alex_182: 1970039691
-      Alex_521: 1396305935
       Alex_335: 1745620934
       Alex_70: -1191107070
       Alex_266: -1815214711
@@ -11411,11 +11447,11 @@ TextureImporter:
       Alex_428: 78487755
       Alex_510: -1053890932
       Alex_67: -2139117139
-      Alex_103: 1968025132
       Alex_282: -540859739
       Alex_76: 704867733
       Alex_160: 1425521036
       Alex_264: 2011579581
+      Alex_103: 1968025132
       Alex_367: 784917252
       Alex_164: 746427920
       Alex_77: 1409081670
@@ -11490,9 +11526,9 @@ TextureImporter:
       Alex_361: 581056676
       Alex_475: -622155353
       Alex_90: -130618148
-      Alex_309: 40482167
       Alex_390: -613074584
       Alex_483: 1032810376
+      Alex_309: 40482167
       Alex_51: 1478589496
       Alex_298: -1179316252
       Alex_445: -524863135
@@ -11602,10 +11638,10 @@ TextureImporter:
       Alex_148: 1107136958
       Alex_192: -473807091
       Alex_224: 1982058258
-      Alex_268: 1717285643
-      Alex_122: -2070672599
-      Alex_170: 170357571
       Alex_442: -270516278
+      Alex_122: -2070672599
+      Alex_268: 1717285643
+      Alex_170: 170357571
       Alex_314: 432064441
       Alex_185: -1740352922
       Alex_423: -1543343203
@@ -11650,8 +11686,8 @@ TextureImporter:
       Alex_343: -998522535
       Alex_6: -48726272
       Alex_194: 372555844
-      Alex_138: -866002595
       Alex_372: -61148876
+      Alex_138: -866002595
       Alex_243: -1291234152
       Alex_127: 1705578197
       Alex_39: 160376556
@@ -11671,8 +11707,8 @@ TextureImporter:
       Alex_29: -225571700
       Alex_256: -1825436908
       Alex_112: 482471448
-      Alex_437: 289504930
       Alex_489: 1495497205
+      Alex_437: 289504930
       Alex_59: -1376836202
       Alex_272: 1671175679
       Alex_502: -724732560
@@ -11680,12 +11716,12 @@ TextureImporter:
       Alex_91: -906918282
       Alex_403: 812575676
       Alex_80: -908220467
-      Alex_155: -1964595894
       Alex_221: -564150634
-      Alex_88: -810487636
+      Alex_155: -1964595894
       Alex_379: -728682059
       Alex_481: -1227079675
       Alex_86: -1895367811
+      Alex_88: -810487636
       Alex_166: 1736583386
       Alex_516: 134773363
       Alex_50: -1747057649
@@ -11882,8 +11918,8 @@ TextureImporter:
       Alex_448: -629417971
       Alex_482: 829993180
       Alex_486: 1403270302
-      Alex_104: 665778012
       Alex_78: 132062810
+      Alex_104: 665778012
       Alex_198: -573307869
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Healing : MonoBehaviour
@@ -30,12 +28,12 @@ public class Healing : MonoBehaviour
         {
             Debug.Log("Play sound");
             PlayerLife _playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
-            audioSource.Play();
 
             if (_playerLife.playerLife < _playerLife.playerMaxLife)
             {
                 _playerLife.GetHeal(healingAmount);
                 Destroy(gameObject);
+                audioSource.Play();
             }
         }
     }

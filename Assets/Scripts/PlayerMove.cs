@@ -1,19 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D RB2D;
+    public Animator playerAnim;
     public float dashForce, speed, playerRotateSpeed;    
+    private float aXH, aXV;
     public KeyCode dashKey;
-    float aXH, aXV;
-    Vector2 direction;
+    private Vector2 direction;
+    private Vector2 _lastMovement = Vector2.zero;
 
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();;
+        playerAnim = GetComponent<Animator>();
     }
+
     private void Update()
     {
         aXH = Input.GetAxisRaw("Horizontal");
@@ -28,11 +30,51 @@ public class PlayerMove : MonoBehaviour
         }
 
         Debug.Log("Dash" + Input.GetKeyDown(dashKey));
+
+        UpdateRunningAnims(direction);
+        UpdateShootingAnims();
     }
 
     private void FixedUpdate()
     {
         //Movement
         transform.position += (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.deltaTime;
+    }
+
+    private void UpdateRunningAnims(Vector2 movement)
+    {
+        if (movement.magnitude > 0)
+        {
+            playerAnim.SetBool("isRunning", true);
+            playerAnim.SetFloat("aXH", movement.x);
+            playerAnim.SetFloat("aXV", movement.y);
+        }
+        else
+        {
+            playerAnim.SetBool("isRunning", false);
+            playerAnim.SetFloat("aXH", _lastMovement.x);
+            playerAnim.SetFloat("aXV", _lastMovement.y);
+        }
+
+        if (movement.magnitude > 0)
+        {
+            _lastMovement = movement;
+        }
+    }
+
+    private void UpdateShootingAnims()
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            playerAnim.SetBool("isAttacking", true);
+            playerAnim.SetFloat("HAx", _lastMovement.x);
+            playerAnim.SetFloat("VAx", _lastMovement.y);
+            playerAnim.SetTrigger("isShooting");
+        }
+        else
+        {
+            playerAnim.SetBool("isAttacking", false);
+            Debug.Log("se termino anim ataque");
+        }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,9 +19,9 @@ public class SceneManagerController : MonoBehaviour
         if (wantedActiveMenu != null) wantedActiveMenu.SetActive(true);
     }
 
-    public void ChangeScene(Object scene)
+    public void ChangeScene(string scene)
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(scene);
     }
 
     public void RestartLevel()

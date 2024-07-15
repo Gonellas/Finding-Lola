@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
@@ -10,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     GameManager gameManager;
     public AudioSource healSound;
     public AudioSource damageSound;
+    public Animator playerAnim;
 
     private void Start()
     {
@@ -17,12 +16,15 @@ public class PlayerLife : MonoBehaviour
         lifeCanvas = FindObjectOfType<LifeCanvas>();
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         gameManager = FindObjectOfType<GameManager>();
+        playerAnim = GetComponent<Animator>();
+
     }
 
     public void GetDamage(float damage)
     {
         playerLife -= damage;
         damageSound.Play();
+        playerAnim.SetTrigger("isDamaged");
 
         if (playerLife <= 0)
         {
