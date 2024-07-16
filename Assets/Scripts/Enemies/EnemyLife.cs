@@ -7,14 +7,18 @@ public class EnemyLife : MonoBehaviour
     public float enemyLife;
     public float enemyMaxLife = 100;
 
+    Animator enemyAnim;
+
     private void Start()
     {
         enemyLife = enemyMaxLife;    
+        enemyAnim = GetComponentInChildren<Animator>();
     }
 
     public void GetDamage(float damage)
     {
         enemyLife -= damage;
+        enemyAnim.SetTrigger("isDamaged");
 
         if (enemyLife <= 0)
         {

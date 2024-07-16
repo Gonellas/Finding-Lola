@@ -101,6 +101,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -11356,16 +11392,15 @@ TextureImporter:
       Enemy2_74: -1602983260
       Enemy2_189: -2023276184
       Enemy2_276: 764824471
-      Enemy2_438: 1459996428
+      Enemy2_40: 106799950
       Enemy2_180: 1741811141
       Enemy2_65: -865370551
-      Enemy2_445: 252920715
-      Enemy2_355: 62870890
+      Enemy2_176: -1769789993
       Enemy2_134: -392986270
       Enemy2_156: 214332526
       Enemy2_395: 123650487
       Enemy2_256: -894517364
-      Enemy2_479: 99673830
+      Enemy2_355: 62870890
       Enemy2_304: -1753447833
       Enemy2_383: -1480960296
       Enemy2_106: 1767933023
@@ -11432,8 +11467,8 @@ TextureImporter:
       Enemy2_6: -877226111
       Enemy2_222: 1661065365
       Enemy2_84: -932529965
-      Enemy2_110: 1374027951
       Enemy2_248: -43366091
+      Enemy2_110: 1374027951
       Enemy2_305: 1110478442
       Enemy2_367: 534861450
       Enemy2_420: 271898790
@@ -11515,10 +11550,10 @@ TextureImporter:
       Enemy2_213: -1924007785
       Enemy2_247: -206745179
       Enemy2_285: 795998708
-      Enemy2_307: -1123120921
       Enemy2_350: 337520646
       Enemy2_363: -886305982
       Enemy2_532: -275121766
+      Enemy2_307: -1123120921
       Enemy2_466: -1164434383
       Enemy2_29: 970667350
       Enemy2_76: -1611410326
@@ -11635,8 +11670,8 @@ TextureImporter:
       Enemy2_32: 407190875
       Enemy2_279: 1033990043
       Enemy2_31: 332261970
-      Enemy2_373: -1891177560
       Enemy2_508: 1571166750
+      Enemy2_373: -1891177560
       Enemy2_217: 1061005497
       Enemy2_218: 346007819
       Enemy2_518: -1044105494
@@ -11659,18 +11694,18 @@ TextureImporter:
       Enemy2_431: 1308156271
       Enemy2_195: 2077944939
       Enemy2_260: -991522342
-      Enemy2_516: -1677114766
+      Enemy2_519: 159101500
       Enemy2_255: -133277483
+      Enemy2_516: -1677114766
       Enemy2_18: 815506442
       Enemy2_412: 373117238
       Enemy2_178: 209831111
       Enemy2_411: -396063636
       Enemy2_164: 1096291999
+      Enemy2_414: 175855138
       Enemy2_403: -581659764
-      Enemy2_519: 159101500
       Enemy2_162: -1469679528
       Enemy2_281: -1823150274
-      Enemy2_414: 175855138
       Enemy2_175: -150034174
       Enemy2_455: 275863877
       Enemy2_449: -927616653
@@ -11685,21 +11720,21 @@ TextureImporter:
       Enemy2_215: -144511678
       Enemy2_119: -670525632
       Enemy2_200: 1563556116
-      Enemy2_314: 1561167342
       Enemy2_488: 1776533063
-      Enemy2_405: -1985050647
+      Enemy2_441: -1988464393
       Enemy2_298: 1120574059
       Enemy2_181: 140964570
-      Enemy2_441: -1988464393
+      Enemy2_314: 1561167342
       Enemy2_182: 1905777181
+      Enemy2_405: -1985050647
       Enemy2_381: -598151011
       Enemy2_219: -39909222
       Enemy2_204: -85938470
-      Enemy2_216: 388399161
       Enemy2_82: 1229985350
-      Enemy2_243: -159825475
+      Enemy2_216: 388399161
       Enemy2_41: 1275362035
       Enemy2_244: -1728494623
+      Enemy2_243: -159825475
       Enemy2_336: -1282772935
       Enemy2_515: -231247110
       Enemy2_27: -65982042
@@ -11878,13 +11913,14 @@ TextureImporter:
       Enemy2_66: 784733919
       Enemy2_235: -737631120
       Enemy2_454: -435773228
+      Enemy2_438: 1459996428
+      Enemy2_445: 252920715
       Enemy2_4: -183887817
-      Enemy2_263: 2013445184
       Enemy2_338: -1972919679
       Enemy2_496: -1960279585
-      Enemy2_40: 106799950
+      Enemy2_263: 2013445184
       Enemy2_313: -802565973
-      Enemy2_176: -1769789993
+      Enemy2_479: 99673830
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowEnemy : MonoBehaviour
@@ -24,7 +22,12 @@ public class FollowEnemy : MonoBehaviour
         if (target == null) return;
 
         if (playerSpotted) followPlayerRotationSpottedPoint();
-     }
+        else
+        {
+            SetMovementAnimations(false, false, false, false);
+        }
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -85,7 +88,7 @@ public class FollowEnemy : MonoBehaviour
         enemyAnim.SetBool("isWalkingDown", movingDown);
     }
 
-        public void PlayerHasBeenSeen()
+    public void PlayerHasBeenSeen()
     {
         if (!playerSpotted) playerSpotted = true;
         else playerSpotted= false;
