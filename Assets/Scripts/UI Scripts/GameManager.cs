@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +5,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject defeatedMenu;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject tutorialCompletedMenu;
+
+    [SerializeField] List<GameObject> _enemiesToDefeat;
 
     private bool isPaused = false;
     public AudioSource audioSource;
@@ -44,5 +46,19 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
         Time.timeScale = 0;
         isPaused = true;
+    }
+
+    public void EnemyDefeated(GameObject enemy)
+    {
+        _enemiesToDefeat.Remove(enemy);
+        CheckTutorialCompleted();
+    }
+
+    private void CheckTutorialCompleted()
+    {
+        if (_enemiesToDefeat.Count == 0)
+        {
+            tutorialCompletedMenu.SetActive(true);
+        }
     }
 }

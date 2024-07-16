@@ -9,10 +9,13 @@ public class EnemyLife : MonoBehaviour
 
     Animator enemyAnim;
 
+    private GameManager gameManager;
+
     private void Start()
     {
         enemyLife = enemyMaxLife;    
         enemyAnim = GetComponentInChildren<Animator>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void GetDamage(float damage)
@@ -22,17 +25,16 @@ public class EnemyLife : MonoBehaviour
 
         if (enemyLife <= 0)
         {
-            DestroyObject();
-        }
-        else
-        {
-            Debug.Log(gameObject.name + " recibió daño, le queda " + enemyLife + " de vida");
+            Die();
         }
     }
 
-    private void DestroyObject()
+    private void Die()
     {
-        Debug.Log(gameObject.name + " se murió");
+        if (gameManager != null)
+        {
+            gameManager.EnemyDefeated(this.gameObject);
+        }
         Destroy(gameObject);
     }
 }

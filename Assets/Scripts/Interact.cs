@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -10,7 +8,12 @@ public class Interact : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            interact.SetActive(true);
+            PlayerLife _playerLife = collision.gameObject.GetComponent<PlayerLife>();
+
+            if (_playerLife.playerLife < _playerLife.playerMaxLife)
+            {
+                interact.SetActive(true);
+            }
         }
     }
 

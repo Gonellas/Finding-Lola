@@ -24,17 +24,21 @@ public class Healing : MonoBehaviour
 
     private void Update()
     {
-        if (isPlayerInRange && Input.GetKey(KeyCode.E))
-        {
-            Debug.Log("Play sound");
-            PlayerLife _playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
+        PlayerLife _playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
 
-            if (_playerLife.playerLife < _playerLife.playerMaxLife)
+        if (isPlayerInRange && _playerLife.playerLife < _playerLife.playerMaxLife)
+        {
+            if (Input.GetKey(KeyCode.E))
             {
                 _playerLife.GetHeal(healingAmount);
                 Destroy(gameObject);
                 audioSource.Play();
             }
+        }
+        else
+        {
+            isPlayerInRange = false;
+            Debug.Log("tengo toda la vida");
         }
     }
 }
