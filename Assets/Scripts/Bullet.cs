@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour
     public void SetDirection(Vector3 dir)
     {
         direction = dir;
-        Debug.Log("Direction set to: " + direction);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

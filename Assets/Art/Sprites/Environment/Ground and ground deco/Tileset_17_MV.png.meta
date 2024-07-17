@@ -101,6 +101,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -5403,7 +5439,7 @@ TextureImporter:
       Tileset_17_MV_156: 431386250
       Tileset_17_MV_184: 1403048626
       Tileset_17_MV_3: -513113800
-      Tileset_17_MV_209: -1921194262
+      Tileset_17_MV_94: 740015625
       Tileset_17_MV_73: -686766645
       Tileset_17_MV_59: 1430748076
       Tileset_17_MV_53: -1802602184
@@ -5412,7 +5448,7 @@ TextureImporter:
       Tileset_17_MV_137: -1114828799
       Tileset_17_MV_140: 209417889
       Tileset_17_MV_112: -1669942391
-      Tileset_17_MV_94: 740015625
+      Tileset_17_MV_209: -1921194262
       Tileset_17_MV_98: -1186383815
       Tileset_17_MV_117: -1063338316
       Tileset_17_MV_68: 247923850

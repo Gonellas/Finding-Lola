@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public void TogglePauseMenu()
     {
         isPaused = !isPaused;
+        Time.timeScale = isPaused ? 0 : 1;
+        Debug.Log("Game paused: " + isPaused);
         PauseMenu(isPaused);
     }
 
@@ -31,13 +33,20 @@ public class GameManager : MonoBehaviour
         if (pause)
         {
             Time.timeScale = 0;
-            pauseMenu.SetActive(true);
+            pauseMenu.SetActive(true); 
+            Debug.Log("Pause menu activated");
         }
         else
         {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
+            Debug.Log("Pause menu deactivated");
         }
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
     }
 
     public void DefeatedMenu()
