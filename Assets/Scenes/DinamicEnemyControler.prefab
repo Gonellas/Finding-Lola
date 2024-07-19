@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1674045603
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: -1008621172, guid: fa6aa48177f7ce240af9d0adb96d1114, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 5757115664498464297}
   - component: {fileID: 5757115664498464298}
   - component: {fileID: 5757115664498464296}
+  - component: {fileID: 7348995407894220213}
   - component: {fileID: 5708019793741173574}
   m_Layer: 3
   m_Name: DinamicEnemyControler
@@ -264,6 +265,23 @@ MonoBehaviour:
   patrolAndFollowEnemy: {fileID: 0}
   playerNotSeen: {r: 0.2901961, g: 0.8392157, b: 0.69411767, a: 0.39215687}
   playerSeen: {r: 0.94509804, g: 0.003921569, b: 0.09019608, a: 0.39215687}
+--- !u!114 &7348995407894220213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5757115664498464302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab6c90b6f8cda743a144657ccc107a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteR: {fileID: 5757115664134158196}
+  followEnemy: {fileID: 5757115664498464303}
+  patrolAndFollowEnemy: {fileID: 0}
+  playerNotSeen: {r: 0, g: 0.8982549, b: 1, a: 0}
+  playerSeen: {r: 1, g: 0, b: 0, a: 0}
 --- !u!70 &5708019793741173574
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -353,7 +371,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1674045603
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
