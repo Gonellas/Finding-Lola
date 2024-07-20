@@ -101,6 +101,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -11401,9 +11437,10 @@ TextureImporter:
       Player_396: 2137054582
       Player_164: -1055159140
       Player_271: 215573305
+      Player_494: -435436896
       Player_161: 311017457
-      Player_220: 1401519662
       Player_471: 2097100593
+      Player_220: 1401519662
       Player_156: -216223387
       Player_377: -1370916230
       Player_439: -744108240
@@ -11428,7 +11465,6 @@ TextureImporter:
       Player_488: -1147134486
       Player_524: -2015845412
       Player_288: -1725533538
-      Player_494: -435436896
       Player_525: -763780591
       Player_274: 1070071379
       Player_388: -639336313
@@ -11487,11 +11523,11 @@ TextureImporter:
       Player_393: -552673770
       Player_482: 1225847248
       Player_399: 1186245201
+      Player_426: 1265082054
       Player_255: 844660895
       Player_100: 590596669
       Player_356: -1816681
       Player_229: 1593510898
-      Player_426: 1265082054
       Player_186: 1787765072
       Player_335: 488481979
       Player_449: -1625910529
@@ -11500,10 +11536,10 @@ TextureImporter:
       Player_62: 135428192
       Player_521: -777746415
       Player_468: -2080641392
-      Player_411: 830908040
-      Player_464: 408657797
       Player_509: 893692867
+      Player_464: 408657797
       Player_253: 1588512038
+      Player_411: 830908040
       Player_225: -468206866
       Player_241: -1597612997
       Player_55: 728913886
@@ -11634,10 +11670,10 @@ TextureImporter:
       Player_236: 594216089
       Player_325: 879178064
       Player_95: -1709279640
-      Player_442: 251787469
-      Player_136: 789628045
-      Player_516: -1290897945
       Player_518: 1122651857
+      Player_136: 789628045
+      Player_442: 251787469
+      Player_516: -1290897945
       Player_299: 2131871153
       Player_289: 1672979135
       Player_282: 1367606247
@@ -11646,30 +11682,29 @@ TextureImporter:
       Player_185: -1225724154
       Player_56: -1339872116
       Player_231: -463922753
-      Player_334: 937328266
-      Player_355: -1030653015
       Player_418: 2024341772
-      Player_83: -1343597993
+      Player_355: -1030653015
+      Player_334: 937328266
       Player_54: 509198796
       Player_533: -403427496
-      Player_251: 883882479
+      Player_83: -1343597993
       Player_219: 565818773
       Player_67: 79457437
+      Player_251: 883882479
       Player_310: -1472113431
       Player_410: -1887050817
       Player_77: -1425819050
       Player_27: 74778097
-      Player_106: -701018994
-      Player_110: 328460457
-      Player_174: 1936575456
       Player_248: 1374470008
+      Player_531: 104186076
+      Player_110: 328460457
       Player_318: -1354401695
       Player_42: 740554305
       Player_496: -518176852
       Player_465: 951597418
-      Player_447: 1698074261
-      Player_531: 104186076
+      Player_106: -701018994
       Player_407: -1232937708
+      Player_174: 1936575456
       Player_343: -104040119
       Player_308: 1112307462
       Player_320: -75920364
@@ -11677,11 +11712,12 @@ TextureImporter:
       Player_30: -622265335
       Player_66: 415386769
       Player_121: 1468501394
+      Player_447: 1698074261
       Player_302: -1268818387
       Player_59: 102197087
       Player_135: -654577098
-      Player_196: -937146353
       Player_454: -916753350
+      Player_196: -937146353
       Player_477: -1812252336
       Player_0: 978528427
       Player_122: -1628873607

@@ -38,7 +38,9 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         //Movement
-        transform.position += (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.deltaTime;
+        transform.position += (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.fixedDeltaTime;
+        //Vector2 movement = new Vector2 (aXH, aXV) * speed * Time.fixedDeltaTime;
+        //RB2D.MovePosition(RB2D.position + movement);
     }
 
     private void UpdateRunningAnims(Vector2 movement)
