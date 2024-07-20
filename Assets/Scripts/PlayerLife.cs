@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class PlayerLife : MonoBehaviour
     public AudioSource damageSound;
     public Animator playerAnim;
 
+    public bool isBlocking = false;
+    public float blockDuration = 1.0f; // Duration of the block state
+    public float blockCooldown = 3.0f; // Cooldown time for blocking
+    private float blockCooldownTimer = 0f;
+
     private void Start()
     {
         playerLife = playerMaxLife;
@@ -17,23 +23,42 @@ public class PlayerLife : MonoBehaviour
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         gameManager = FindObjectOfType<GameManager>();
         playerAnim = GetComponent<Animator>();
+    }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1) && blockCooldownTimer <= 0f)
+        {
+            StartCoroutine(Block());
+        }
+
+        if (blockCooldownTimer > 0f)
+        {
+            blockCooldownTimer -= Time.deltaTime;
+        }
     }
 
     public void GetDamage(float damage)
     {
-        playerLife -= damage;
-        damageSound.Play();
-        playerAnim.SetTrigger("isDamaged");
-
-        if (playerLife <= 0)
+        if (!isBlocking)
         {
-            DestroyObject();
+            playerLife -= damage;
+            damageSound.Play();
+            playerAnim.SetTrigger("isDamaged");
+
+            if (playerLife <= 0)
+            {
+                DestroyObject();
+            }
+            else
+            {
+                lifeCanvas.UpdateLife(playerLife, playerMaxLife);
+                Debug.Log(gameObject.name + " recibió daño, le queda " + playerLife + " de vida");
+            }
         }
         else
         {
-            lifeCanvas.UpdateLife(playerLife, playerMaxLife);
-            Debug.Log(gameObject.name + " recibió daño, le queda " + playerLife + " de vida");
+            Debug.Log(gameObject.name + " blocked the damage.");
         }
     }
 
@@ -41,7 +66,7 @@ public class PlayerLife : MonoBehaviour
     {
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         Debug.Log(gameObject.name + " se murió");
-        
+
         gameManager.DefeatedMenu();
         Destroy(gameObject);
     }
@@ -56,5 +81,15 @@ public class PlayerLife : MonoBehaviour
         }
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         Debug.Log(gameObject.name + " recibió vida, le queda " + playerLife + " de vida");
+    }
+
+    private IEnumerator Block()
+    {
+        isBlocking = true;
+        playerAnim.SetBool("isBlocking", true);
+        yield return new WaitForSeconds(blockDuration);
+        isBlocking = false;
+        playerAnim.SetBool("isBlocking", false);
+        blockCooldownTimer = blockCooldown;
     }
 }
