@@ -1,19 +1,25 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
+    public float speedBoost = 15f;
     public Rigidbody2D RB2D;
     public Animator playerAnim;
-    public float dashForce, speed, playerRotateSpeed;    
+    public float dashForce, speed, playerRotateSpeed;
     private float aXH, aXV;
     public KeyCode dashKey;
     private Vector2 direction;
     private Vector2 _lastMovement = Vector2.zero;
 
+    private float defaultSpeed;
+    private bool isSpeedBoosted = false;
+
     private void Start()
     {
-        RB2D = GetComponent<Rigidbody2D>();;
+        RB2D = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        defaultSpeed = speed; // Store the default speed
     }
 
     private void Update()
@@ -23,7 +29,7 @@ public class PlayerMove : MonoBehaviour
 
         direction = new Vector2(aXH, aXV).normalized;
 
-        //Dash
+        // Dash
         if (Input.GetKeyDown(dashKey) && direction != Vector2.zero)
         {
             RB2D.AddForce(direction * dashForce, ForceMode2D.Impulse);
@@ -37,10 +43,8 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Movement
+        // Movement
         transform.position += (Vector3.right * aXH + Vector3.up * aXV) * speed * Time.fixedDeltaTime;
-        //Vector2 movement = new Vector2 (aXH, aXV) * speed * Time.fixedDeltaTime;
-        //RB2D.MovePosition(RB2D.position + movement);
     }
 
     private void UpdateRunningAnims(Vector2 movement)
@@ -77,6 +81,30 @@ public class PlayerMove : MonoBehaviour
         {
             playerAnim.SetBool("isAttacking", false);
             Debug.Log("se termino anim ataque");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PowerUp")
+        {
+            Debug.Log("Colision");
+            StartCoroutine(SpeedBoostCoroutine());
+            Destroy(collision.gameObject); // Destroy the power-up object
+        }
+    }
+
+    private IEnumerator SpeedBoostCoroutine()
+    {
+        if (!isSpeedBoosted)
+        {
+            isSpeedBoosted = true;
+            speed = speedBoost; // Boost speed
+
+            yield return new WaitForSeconds(10f); // Wait for 10 seconds
+
+            speed = defaultSpeed; // Reset to default speed
+            isSpeedBoosted = false;
         }
     }
 }
