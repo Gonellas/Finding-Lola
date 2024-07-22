@@ -30,9 +30,9 @@ public class Healing : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
+                audioSource.Play();
                 _playerLife.GetHeal(healingAmount);
                 Destroy(gameObject);
-                audioSource.Play();
             }
         }
         else

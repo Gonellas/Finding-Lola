@@ -6,11 +6,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject defeatedMenu;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject tutorialCompletedMenu;
+    [SerializeField] GameObject level1CompletedCanvas;
+    [SerializeField] GameObject triggerLvl1;
+
+    [SerializeField] GameObject canvasToDeactivate;
 
     [SerializeField] List<GameObject> _enemiesToDefeat;
 
     private bool isPaused = false;
     public AudioSource audioSource;
+
+    public bool isTutorial = false;
+    public bool isLevel1 = false;
 
     private void Update()
     {
@@ -60,14 +67,27 @@ public class GameManager : MonoBehaviour
     public void EnemyDefeated(GameObject enemy)
     {
         _enemiesToDefeat.Remove(enemy);
-        CheckTutorialCompleted();
+        CheckLevelCompleted();
     }
 
-    private void CheckTutorialCompleted()
+    private void CheckLevelCompleted()
     {
         if (_enemiesToDefeat.Count == 0)
         {
-            tutorialCompletedMenu.SetActive(true);
+            if (isTutorial)
+            {
+                tutorialCompletedMenu.SetActive(true);
+            }
+            else if (isLevel1)
+            {
+                level1CompletedCanvas.SetActive(true);
+                triggerLvl1.SetActive(true);
+            }
         }
+    }
+
+    public void DeactivateCanvas()
+    {
+        canvasToDeactivate.SetActive(false);
     }
 }

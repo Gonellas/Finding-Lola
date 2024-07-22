@@ -1,32 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Triggers : MonoBehaviour
 {
-    public GameObject enemy;
-    public GameObject trigger;
-    private bool hasTriggered = false;
+    public string nextScene;
 
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (enemy == null)
+        if (collision.CompareTag("Player"))
         {
-            ActivateTrigger();
+            SceneManager.LoadScene(nextScene);
+            Debug.Log("escena 2");
         }
-    }
-
-    private void Update()
-    {
-        if (enemy == null && !hasTriggered)
-        {
-            ActivateTrigger();
-        }
-    }
-
-    private void ActivateTrigger()
-    {
-        trigger.SetActive(true);
-        hasTriggered = true;
     }
 }

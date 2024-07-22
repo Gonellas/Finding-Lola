@@ -5,14 +5,13 @@ public class Bullet : MonoBehaviour
     public float speed = 10f;
     public float lifeTime = 3f;
     public float bulletDamage = 25f;
-    public Animator enemyDamaged;
     private Vector3 direction;
 
     private void Start()
     {
         Destroy(gameObject, lifeTime);
-        enemyDamaged = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
     }
+
     private void Update()
     {
         transform.position += speed * transform.right * Time.deltaTime;
@@ -42,8 +41,13 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
         {
-            enemyDamaged.SetBool("isDamaged", true);
-            collision.gameObject.GetComponent<EnemyLife>().GetDamage(bulletDamage);
+            Animator enemyDamaged = collision.gameObject.GetComponentInChildren<Animator>();
+
+            if (enemyDamaged != null) enemyDamaged.SetBool("isDamaged", true);
+            EnemyLife enemyLife = collision.gameObject.GetComponent<EnemyLife>();
+            enemyLife.GetDamage(bulletDamage);
+            Debug.Log("daño hecho" + bulletDamage++);
+            //collision.gameObject.GetComponent<EnemyLife>().GetDamage(bulletDamage);
         }
 
         Destroy(gameObject);

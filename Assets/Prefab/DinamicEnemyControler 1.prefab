@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1674045603
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: -1008621172, guid: fa6aa48177f7ce240af9d0adb96d1114, type: 3}
   m_Color: {r: 0.46226418, g: 0, b: 0.09554773, a: 1}
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1674045603
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9433962, g: 0.004449993, b: 0.09141554, a: 0.39215687}
@@ -232,12 +232,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452592397168670848}
-  - component: {fileID: 1452592397168670849}
   - component: {fileID: 1452592397168670850}
   - component: {fileID: 1452592397168670852}
   - component: {fileID: 1452592397168670855}
   - component: {fileID: 1452592397168670853}
   - component: {fileID: 1511858061679541739}
+  - component: {fileID: 8391555604006523394}
   m_Layer: 3
   m_Name: DinamicEnemyControler 1
   m_TagString: Untagged
@@ -262,20 +262,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1452592397168670849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452592397168670851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f557a82f3fceb4eb5d956d685ed770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyLife: 0
-  enemyMaxLife: 100
 --- !u!114 &1452592397168670850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,3 +384,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0032639503, y: 0.10119295}
   m_Size: {x: 0.6762724, y: 1.4113016}
   m_Direction: 0
+--- !u!114 &8391555604006523394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452592397168670851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f557a82f3fceb4eb5d956d685ed770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLife: 0
+  enemyMaxLife: 100

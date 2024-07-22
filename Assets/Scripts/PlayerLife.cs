@@ -73,8 +73,8 @@ public class PlayerLife : MonoBehaviour
 
     public void GetHeal(float healingNumber)
     {
-        playerLife += healingNumber;
         healSound.Play();
+        playerLife += healingNumber;
         if (playerLife > playerMaxLife)
         {
             playerLife = playerMaxLife;
