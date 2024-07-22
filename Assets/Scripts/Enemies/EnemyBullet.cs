@@ -7,15 +7,13 @@ public class EnemyBullet : MonoBehaviour
     public float speed = 10f;
     public float lifeTime = 3f;
     public float bulletDamage = 25f;
-    private Transform target;
+    public Transform target;
     public Animator playerDamaged;
-    public GameManager gameManager;
 
     private void Start()
     {
         Destroy(gameObject, lifeTime);
         playerDamaged = GameObject.FindWithTag("Player").GetComponent<Animator>();
-        gameManager = FindObjectOfType<GameManager>();
     }
     private void Update()
     {

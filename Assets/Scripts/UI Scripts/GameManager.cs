@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject tutorialCompletedMenu;
     [SerializeField] GameObject level1CompletedCanvas;
+    [SerializeField] GameObject level2CompletedCanvas;
     [SerializeField] GameObject triggerLvl1;
+    [SerializeField] GameObject triggerLvl2;
 
     [SerializeField] GameObject canvasToDeactivate;
 
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public bool isTutorial = false;
     public bool isLevel1 = false;
+    public bool isLevel2 = false;
 
     private void Update()
     {
@@ -82,6 +85,11 @@ public class GameManager : MonoBehaviour
             {
                 level1CompletedCanvas.SetActive(true);
                 triggerLvl1.SetActive(true);
+            }
+            else if (isLevel2)
+            {
+                level2CompletedCanvas.SetActive(true);
+                triggerLvl2.SetActive(true);
             }
         }
     }
