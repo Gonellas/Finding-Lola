@@ -12,9 +12,11 @@ public class PlayerLife : MonoBehaviour
     public Animator playerAnim;
 
     public bool isBlocking = false;
-    public float blockDuration = 1.0f; // Duration of the block state
-    public float blockCooldown = 3.0f; // Cooldown time for blocking
+    public float blockDuration = 1.0f; 
+    public float blockCooldown = 3.0f; 
     private float blockCooldownTimer = 0f;
+
+    public GameObject blockObject;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class PlayerLife : MonoBehaviour
         lifeCanvas.UpdateLife(playerLife, playerMaxLife);
         gameManager = FindObjectOfType<GameManager>();
         playerAnim = GetComponent<Animator>();
+        blockObject.SetActive(false); 
     }
 
     private void Update()
@@ -86,10 +89,10 @@ public class PlayerLife : MonoBehaviour
     private IEnumerator Block()
     {
         isBlocking = true;
-        playerAnim.SetBool("isBlocking", true);
+        blockObject.SetActive(true); 
         yield return new WaitForSeconds(blockDuration);
         isBlocking = false;
-        playerAnim.SetBool("isBlocking", false);
+        blockObject.SetActive(false); 
         blockCooldownTimer = blockCooldown;
     }
 }

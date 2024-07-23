@@ -33,6 +33,7 @@ public class EnemyLife : MonoBehaviour
         {
             gameManager.EnemyDefeated(this.gameObject);
         }
+
         Destroy(gameObject);
     }
 }

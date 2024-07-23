@@ -101,6 +101,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -11382,12 +11418,12 @@ TextureImporter:
       Enemy1_250: -333747580
       Enemy1_433: 611711921
       Enemy1_485: -179578946
-      Enemy1_45: 1291069167
-      Enemy1_308: 80466373
-      Enemy1_94: -312578770
-      Enemy1_455: -1508644360
-      Enemy1_69: -1294365778
       Enemy1_514: 1219282808
+      Enemy1_45: 1291069167
+      Enemy1_455: -1508644360
+      Enemy1_94: -312578770
+      Enemy1_69: -1294365778
+      Enemy1_308: 80466373
       Enemy1_517: 517867388
       Enemy1_180: -657811531
       Enemy1_421: -1151795982
@@ -11487,9 +11523,8 @@ TextureImporter:
       Enemy1_384: -1552052692
       Enemy1_393: 891647074
       Enemy1_286: 1141955727
-      Enemy1_321: 1569139954
       Enemy1_401: 1095445047
-      Enemy1_413: 173659088
+      Enemy1_321: 1569139954
       Enemy1_137: -1587970328
       Enemy1_185: -1857427213
       Enemy1_252: -1760330539
@@ -11500,19 +11535,20 @@ TextureImporter:
       Enemy1_163: -212628854
       Enemy1_440: -499831457
       Enemy1_412: -1095289164
-      Enemy1_474: -1110791966
+      Enemy1_413: 173659088
       Enemy1_429: 1062302850
       Enemy1_532: 1946356906
       Enemy1_344: -1937035306
       Enemy1_360: 1626242798
+      Enemy1_474: -1110791966
       Enemy1_324: -1767137259
-      Enemy1_417: 5554306
+      Enemy1_506: 1942836697
       Enemy1_233: 1409154240
       Enemy1_130: 501516784
       Enemy1_385: -2058193108
-      Enemy1_506: 1942836697
       Enemy1_149: -1768604744
       Enemy1_513: 1514447263
+      Enemy1_417: 5554306
       Enemy1_80: -1786012353
       Enemy1_62: -1070327230
       Enemy1_358: 839083038
@@ -11647,30 +11683,31 @@ TextureImporter:
       Enemy1_115: -1189224987
       Enemy1_36: -1046301463
       Enemy1_172: 1177779306
-      Enemy1_292: 1136727454
+      Enemy1_411: -1860177479
       Enemy1_119: 1652156959
+      Enemy1_292: 1136727454
       Enemy1_195: -1425117733
-      Enemy1_13: 69555244
       Enemy1_131: 1192736765
       Enemy1_269: -576200160
-      Enemy1_311: 1724485922
+      Enemy1_13: 69555244
       Enemy1_54: 250031822
       Enemy1_445: 384066803
+      Enemy1_311: 1724485922
       Enemy1_264: -1201768444
       Enemy1_298: -1835485464
       Enemy1_368: -1554621935
       Enemy1_5: 588591342
       Enemy1_224: -801533887
       Enemy1_333: -1438180188
-      Enemy1_411: -1860177479
       Enemy1_143: 443034007
       Enemy1_44: 341507848
       Enemy1_446: 412445251
       Enemy1_331: -1108705429
       Enemy1_211: 589181314
-      Enemy1_197: -1788694741
+      Enemy1_475: 1925098996
       Enemy1_225: 1816580160
       Enemy1_234: -1928939176
+      Enemy1_197: -1788694741
       Enemy1_231: 502918648
       Enemy1_265: -102912626
       Enemy1_184: 1166645454
@@ -11678,13 +11715,12 @@ TextureImporter:
       Enemy1_359: 226864993
       Enemy1_527: -578137332
       Enemy1_66: 2040658012
-      Enemy1_475: 1925098996
       Enemy1_202: -415339249
-      Enemy1_70: 758033194
-      Enemy1_109: -613435329
       Enemy1_332: 2048770840
-      Enemy1_52: 1729305578
+      Enemy1_109: -613435329
       Enemy1_372: 1059000666
+      Enemy1_70: 758033194
+      Enemy1_52: 1729305578
       Enemy1_151: -606571560
       Enemy1_6: 1054985532
       Enemy1_95: 1028163097

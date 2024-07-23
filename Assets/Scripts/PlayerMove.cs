@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
     private float defaultSpeed;
     private bool isSpeedBoosted = false;
 
+    public AudioSource walkingSound;
+
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();
@@ -39,6 +41,7 @@ public class PlayerMove : MonoBehaviour
 
         UpdateRunningAnims(direction);
         UpdateShootingAnims();
+        UpdateWalkingSound();
     }
 
     private void FixedUpdate()
@@ -84,13 +87,25 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    private void UpdateWalkingSound()
+    {
+        if (direction.magnitude > 0 && !walkingSound.isPlaying)
+        {
+            walkingSound.Play();
+        }
+        else if (direction.magnitude == 0 && walkingSound.isPlaying)
+        {
+            walkingSound.Stop();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PowerUp")
         {
             Debug.Log("Colision");
             StartCoroutine(SpeedBoostCoroutine());
-            Destroy(collision.gameObject); // Destroy the power-up object
+            Destroy(collision.gameObject); 
         }
     }
 
@@ -99,11 +114,11 @@ public class PlayerMove : MonoBehaviour
         if (!isSpeedBoosted)
         {
             isSpeedBoosted = true;
-            speed = speedBoost; // Boost speed
+            speed = speedBoost; 
 
-            yield return new WaitForSeconds(10f); // Wait for 10 seconds
+            yield return new WaitForSeconds(10f); 
 
-            speed = defaultSpeed; // Reset to default speed
+            speed = defaultSpeed; 
             isSpeedBoosted = false;
         }
     }

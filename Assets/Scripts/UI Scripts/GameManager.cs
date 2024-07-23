@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +23,9 @@ public class GameManager : MonoBehaviour
     public bool isTutorial = false;
     public bool isLevel1 = false;
     public bool isLevel2 = false;
+    public bool isLevel3 = false;
+
+    public string victoryScene;
 
     private void Update()
     {
@@ -90,6 +95,10 @@ public class GameManager : MonoBehaviour
             {
                 level2CompletedCanvas.SetActive(true);
                 triggerLvl2.SetActive(true);
+            }
+            else if (isLevel3)
+            {
+                SceneManager.LoadScene(victoryScene);
             }
         }
     }

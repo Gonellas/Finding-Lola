@@ -43,11 +43,18 @@ public class Bullet : MonoBehaviour
         {
             Animator enemyDamaged = collision.gameObject.GetComponentInChildren<Animator>();
 
-            if (enemyDamaged != null) enemyDamaged.SetBool("isDamaged", true);
+            enemyDamaged.SetBool("isDamaged", true);
+
             EnemyLife enemyLife = collision.gameObject.GetComponent<EnemyLife>();
-            enemyLife.GetDamage(bulletDamage);
-            Debug.Log("daño hecho" + bulletDamage++);
-            //collision.gameObject.GetComponent<EnemyLife>().GetDamage(bulletDamage);
+            if (enemyLife != null)
+            {
+                Debug.Log("daño hecho" + bulletDamage);
+                enemyLife.GetDamage(bulletDamage);
+            }
+            else
+            {
+                Debug.LogWarning("EnemyLife component not found on the enemy.");
+            }
         }
 
         Destroy(gameObject);

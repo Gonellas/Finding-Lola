@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InvisibleEnemy : MonoBehaviour
@@ -8,13 +5,13 @@ public class InvisibleEnemy : MonoBehaviour
 
     [SerializeField] private SpriteRenderer spriteR;
 
-
     public FollowEnemy followEnemy;
     public PatrolAndFollowEnemy patrolAndFollowEnemy;
     public Color playerNotSeen, playerSeen;
 
     private void Start()
     {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
