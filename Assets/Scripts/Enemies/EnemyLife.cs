@@ -13,13 +13,23 @@ public class EnemyLife : MonoBehaviour
     {
         enemyLife = enemyMaxLife;    
         enemyAnim = GetComponentInChildren<Animator>();
+
+        if (enemyAnim == null)
+        {
+            Debug.LogWarning("Animator component not found in the child object.");
+        }
+
         gameManager = FindObjectOfType<GameManager>();
     }
 
     public void GetDamage(float damage)
     {
         enemyLife -= damage;
-        enemyAnim.SetTrigger("isDamaged");
+
+        if (enemyAnim != null)
+        {
+            enemyAnim.SetTrigger("isDamaged");
+        }
 
         if (enemyLife <= 0)
         {

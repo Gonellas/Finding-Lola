@@ -139,5 +139,5 @@ MonoBehaviour:
   speed: 10
   lifeTime: 3
   bulletDamage: 10
+  target: {fileID: 0}
   playerDamaged: {fileID: -223386770664936479, guid: 81509ccca700e464f836580be993bbec, type: 3}
-  gameManager: {fileID: 0}

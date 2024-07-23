@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
         {
             Animator enemyDamaged = collision.gameObject.GetComponentInChildren<Animator>();
 
-            enemyDamaged.SetBool("isDamaged", true);
+            enemyDamaged.SetTrigger("isDamaged");
 
             EnemyLife enemyLife = collision.gameObject.GetComponent<EnemyLife>();
             if (enemyLife != null)
