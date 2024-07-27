@@ -41,7 +41,10 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
         {
-            Animator enemyDamaged = collision.gameObject.GetComponentInChildren<Animator>();
+            
+            Animator enemyDamaged = collision.gameObject.GetComponentInParent<Animator>();
+
+            Debug.Log(enemyDamaged);
 
             enemyDamaged.SetTrigger("isDamaged");
 
